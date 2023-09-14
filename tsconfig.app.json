@@ -5,9 +5,9 @@
   "compilerOptions": {
     "isolatedModules": true,
     "composite": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["*"]
     }
   }
 }

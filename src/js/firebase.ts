@@ -2,15 +2,15 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
-import firebaseConfig from '../firebase.json';
+import firebase from '../config/firebase.json';
 
 const firebaseConfig = {
-    apiKey: firebaseConfig.apiKey,
-    authDomain: firebaseConfig.authDomain,
-    projectId: firebaseConfig.projectId,
-    storageBucket: firebaseConfig.storageBucket,
-    messagingSenderId: firebaseConfig.messagingSenderId,
-    appId: firebaseConfig.appId
+    apiKey: firebase.apiKey,
+    authDomain: firebase.authDomain,
+    projectId: firebase.projectId,
+    storageBucket: firebase.storageBucket,
+    messagingSenderId: firebase.messagingSenderId,
+    appId: firebase.appId
 };
 
 const app = initializeApp(firebaseConfig);

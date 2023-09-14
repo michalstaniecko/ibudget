@@ -1,13 +1,16 @@
 import {defineStore} from "pinia";
 
-import actions from './actions';
 import getters from "./getters";
 import type State from "./interfaces";
 
-const useExpensesStore = defineStore('expensesStore', {
+const useOutcomesStore = defineStore('outcomesStore', {
     state: (): State => ({
-        expenses: []
+        outcomes: []
     }),
-    actions,
     getters,
+    actions: {
+
+    }
 });
+
+export default useOutcomesStore;
