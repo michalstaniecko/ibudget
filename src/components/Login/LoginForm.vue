@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {ref} from "vue";
 import {useAuthStore} from "@/stores/auth";
+import TheForm from '@/components/Form/TheForm.vue';
 
 const authStore = useAuthStore();
 
@@ -15,33 +16,28 @@ const submitHandler = () => {
 
 <template>
   <div>
-    <form @submit.prevent="submitHandler" novalidate>
-      <div class="d-grid gap-3">
-        <div class="">
-          <input
-              placeholder="Email"
-              class="form-control"
-              type="email"
-              id="email"
-              name="email"
-              v-model="email"
-          />
-        </div>
-        <div class="">
-          <input
-              placeholder="Password"
-              class="form-control"
-              type="password"
-              id="password"
-              name="password"
-              v-model="password"
-          />
-        </div>
-        <div class="">
-          <button class="btn btn-primary">Login</button>
-        </div>
+    <the-form :submit-handler="submitHandler" submit-label="Login">
+      <div class="">
+        <input
+            placeholder="Email"
+            class="form-control"
+            type="email"
+            id="email"
+            name="email"
+            v-model="email"
+        />
       </div>
-    </form>
+      <div class="">
+        <input
+            placeholder="Password"
+            class="form-control"
+            type="password"
+            id="password"
+            name="password"
+            v-model="password"
+        />
+      </div>
+    </the-form>
   </div>
 </template>
 

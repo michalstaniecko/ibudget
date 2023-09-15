@@ -9,9 +9,16 @@ export const useAuthStore = defineStore('auth', {
         }
     },
     actions: {
-        login(email: string, password: string) {
+        login(email: string, password: string): void {
             console.log('login', email, password);
             this.user.id = 'u1';
+            this.router.push('/');
+        },
+
+        register(email: string, password: string): void {
+            console.log('register', email, password);
+            this.user.id = 'u1';
+            this.user.name = 'Michał';
             this.router.push('/');
         }
     },
