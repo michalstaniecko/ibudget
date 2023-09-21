@@ -1,10 +1,14 @@
 <script setup lang="ts">
+import OutcomesTable from "@/components/OutcomesTable/OutcomesTable.vue";
 
 </script>
 
 <template>
   <div>
-    Home View
+    <h2 class="title">
+      Outcomes table
+    </h2>
+    <OutcomesTable />
   </div>
 </template>
 

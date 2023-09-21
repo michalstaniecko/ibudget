@@ -5,10 +5,11 @@ export default interface State {
 export interface OutcomeInfo {
     id: string,
     name: string,
-    value: number,
+    toPay: number,
+    paid?: number,
     categoryId: string,
     typeId: string,
-    comments: CommentsInfo[],
+    comments?: CommentsInfo[] | null,
     created: number,
     outcomeDate: number,
     status: OutcomeStatus

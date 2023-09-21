@@ -1,14 +1,8 @@
 <script setup lang="ts">
-  const props = defineProps({
-    submitHandler: {
-      type: Function, //TODO: check what type should it be
-      required: true
-    },
-    submitLabel: {
-      type: String,
-      required: true
-    }
-  })
+  const props = defineProps<{
+    submitHandler: () => void,
+    submitLabel: string
+  }>()
 </script>
 
 <template>
