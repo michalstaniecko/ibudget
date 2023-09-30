@@ -1,10 +1,18 @@
-export function useFormatCurrency(): Object {
+export function useFormatCurrency(args = {
+    country: 'pl-PL',
+    currency: 'eur'
+}): {
+    getFormattedCurrency: (cents: number) => string,
+    getFormatted: (cents: number) => string,
+    toCents: (value: number | string) => number
+} {
+    const {country, currency} = args;
+
     function getFormatted(cents: number) {
-        return (cents / 100).toString()
+        return new Intl.NumberFormat(country, {minimumFractionDigits: 2, maximumFractionDigits: 2}).format(cents / 100);
     };
 
-    function getFormattedCurrency(cents: number) {
-        const currency = '€';
+    const getFormattedCurrency = (cents: number): string => {
         const formatted = `${getFormatted(cents)} ${currency}`;
         return formatted;
     }

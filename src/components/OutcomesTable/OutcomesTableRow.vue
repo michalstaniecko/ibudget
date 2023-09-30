@@ -3,12 +3,14 @@ import type {OutcomeInfo} from "@/stores/outcomes/interfaces";
 import {computed} from "vue";
 import {useFormatCurrency} from "@/use/useFormatCurrency";
 
-const props = defineProps<{
+interface Props {
   outcome: OutcomeInfo,
   index: number
-}>();
+}
 
-const {outcome} = props;
+const props = defineProps<Props>();
+
+const {outcome, head} = props;
 
 const outcomeIndex = computed(() => props.index + 1);
 

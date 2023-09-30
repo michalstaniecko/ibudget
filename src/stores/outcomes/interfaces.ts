@@ -6,7 +6,7 @@ export interface OutcomeInfo {
     id: string,
     name: string,
     toPay: number,
-    paid?: number,
+    paid: number | 0,
     categoryId: string,
     typeId: string,
     comments?: CommentsInfo[] | null,

@@ -1,5 +1,10 @@
 <script setup lang="ts">
-
+const props = defineProps<{
+  head: {
+    label: string,
+    key: string
+  }[]
+}>()
 </script>
 
 <template>
@@ -8,20 +13,8 @@
     <th>
       #
     </th>
-    <th>
-      Name
-    </th>
-    <th>
-      To pay
-    </th>
-    <th>
-      Paid
-    </th>
-    <th>
-      Comments
-    </th>
-    <th>
-      Status
+    <th v-for="{label, key} in head" :key="key">
+      {{ label }}
     </th>
     <th>
       Actions
